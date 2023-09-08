@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Ace.Shared
-build_property.ProjectDir = C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Shared\
+build_property.ProjectDir = C:\Dev_Github\Ace\Ace.Shared\
