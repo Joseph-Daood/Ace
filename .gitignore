@@ -1,2 +1,59 @@
-**/bin/
-**/obj/
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+# Visual Studio generated files
+.vscode/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.usertasks
+*.sln.docstates
+
+# Compiled binary files
+bin/
+obj/
+*.dll
+*.exe
+
+# .NET Core/5/6
+.cache/
+/bin/
+/obj/
+*.log
+
+# SQL Server projects
+*.sdf
+*.ldf
+
+# NuGet packages
+packages/
+*.nupkg
+!*.nuspec
+
+# User-specific files
+*.suo
+*.user
+
+# Temporary files
+*.tmp
+
+# Visual Studio settings
+.vssettings
+
+# EditorConfig settings
+.editorconfig
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code folder settings
+.vscode/
