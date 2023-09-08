@@ -1,0 +1,63 @@
+﻿
+@page "/families"
+<h3>All Cotifications</h3>
+
+
+
+@if (DataTable == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <TelerikGrid TItem="Dictionary<string, object>"
+             Sortable="@true"
+             FilterMode="@GridFilterMode.FilterMenu"
+             EditMode="GridEditMode.Inline"
+             Pageable="@true"
+             OnCreate="@CreateHandler"
+             OnDelete="@DeleteHandler"
+             OnUpdate="@UpdateHandler"
+             OnRead="@ReadItems">
+        <GridToolBarTemplate>
+            <GridCommandButton Command="Add" Icon="@SvgIcon.Plus">Add</GridCommandButton>
+        </GridToolBarTemplate>
+        <GridColumns>
+            @*You can also manually generate all the columns by yourself by looping over the columns in the DataTable.
+        Make sure you set the FieldType parameter. It is mandatory for dynamic objects like DataTables and Dictionaries*@
+            <GridColumn Field="Name" Title="Family Name" FieldType="@typeof(string)" Width="280px" />
+            <GridColumn Field="Identity" Title="Family Id" FieldType="@typeof(string)" Width="280px" />
+            <GridCommandColumn Width="150px">
+                <GridCommandButton Command="Edit" Icon="@SvgIcon.Pencil" ThemeColor="@ThemeConstants.Button.ThemeColor.Primary">Edit</GridCommandButton>
+                <GridCommandButton Command="Save" Icon="@SvgIcon.Save" ShowInEdit="true">Update</GridCommandButton>
+                <GridCommandButton Command="Delete" Icon="@SvgIcon.Trash">Delete</GridCommandButton>
+                <GridCommandButton Command="Cancel" Icon="@SvgIcon.Cancel" ShowInEdit="true">Cancel</GridCommandButton>
+            </GridCommandColumn>
+        </GridColumns>
+    </TelerikGrid>
+    @*<div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Identity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var family in FamilyList)
+                {
+                     <FamilyCard Family="@family" ></FamilyCard>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        <button class="bg-primary" title="Add new family" @onclick="@AddNewFamilyAsync">Add new family</button>
+        <TelerikButton class="bg-primary" title="Add new family" @onclick="@AddNewFamilyAsync">Add new family</TelerikButton>
+    </div>
+*@
+    
+}

@@ -1,0 +1,50 @@
+﻿@page "/FamilyEdit"
+@page "/FamilyEdit/{FamilyId}"
+
+@if (!Saved)
+{
+    <section class="employee-edit">
+
+        <h1 class="page-title">Details for @Family?.Name @Family?.Identity</h1>
+
+        <EditForm Model="@Family" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary></ValidationSummary>
+
+            <div class="row mb-3">
+                <label for="Name" class="col-form-label col-md-3">name: </label>
+                <div class="col-md-8">
+                    <InputText id="Name" class="form-control col-md-8" @bind-Value="@Family.Name" placeholder="Enter  name"></InputText>
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => Family.Name)" />
+            </div>
+
+            <div class="row mb-3">
+                <label for="Identity" class="col-form-label col-md-3">Identity: </label>
+                <div class="col-md-8">
+                    <InputText id="Identity" class="form-control col-md-8" @bind-Value="@Family.Identity" placeholder="Enter Identity"></InputText>
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => Family.Identity)" />
+            </div>
+
+            <button type="submit" class="btn btn-primary me-1">Save family</button>
+
+           @* @if (Family.FamilyId > 0)
+            {
+            }*@
+
+            <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+        </EditForm>
+
+
+    </section>
+}
+else
+{
+    <TelerikButton OnClick="@NavigateToOverview" ThemeColor="primary">Back to overview</TelerikButton>
+}
+
+
+

@@ -1,0 +1,34 @@
+﻿@page "/Communities"
+
+<h3>All Communities</h3>
+
+
+    @if (@CommunityList == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>CommunityId</th>
+                        <th>Name</th>
+                        <th>MainEmail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var community in CommunityList)
+                    {
+                        <tr>
+                            <td>@community.CommunityId</td>
+                            <td>@community.Name</td>
+                            <td>@community.MainEmail</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+

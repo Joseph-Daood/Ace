@@ -1,0 +1,33 @@
+﻿@page "/notifications"
+<h3>All Cotifications</h3>
+
+
+
+@if (NotificationList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>NotificationId</th>
+                    <th>Title</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var notification in NotificationList)
+                {
+                    <tr>
+                        <td>@notification.NotificationId</td>
+                        <td>@notification.Title</td>
+                        <td>@notification.Message</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

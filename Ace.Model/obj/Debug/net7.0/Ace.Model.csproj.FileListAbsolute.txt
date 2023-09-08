@@ -1,0 +1,17 @@
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\bin\Debug\net7.0\Ace.Model.deps.json
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\bin\Debug\net7.0\Ace.Model.runtimeconfig.json
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\bin\Debug\net7.0\Ace.Model.dll
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\bin\Debug\net7.0\Ace.Model.pdb
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\bin\Debug\net7.0\Ace.Shared.dll
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\bin\Debug\net7.0\Ace.Shared.pdb
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.csproj.AssemblyReference.cache
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.AssemblyInfoInputs.cache
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.AssemblyInfo.cs
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.csproj.CoreCompileInputs.cache
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.csproj.CopyComplete
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.dll
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\refint\Ace.Model.dll
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.pdb
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\Ace.Model.genruntimeconfig.cache
+C:\dev\pluralsight\Blazor\TargetPractice_Demo\Ace\Ace.Model\obj\Debug\net7.0\ref\Ace.Model.dll
