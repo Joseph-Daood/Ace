@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ace.Shared\Ace.Shared.csproj" />
-    <ProjectReference Include="..\Web\Web.csproj" />
   </ItemGroup>
 
 </Project>
