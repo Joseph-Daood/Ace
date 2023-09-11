@@ -71,16 +71,17 @@ namespace Ace.Api.Controllers
             await _familyRepository.InsertAsync(family);
             await _unitOfWork.CommitAsync();
 
-            var familyToReturn = _mapper.Map<FamilyReadDto>(family);
+            return CreatedAtRoute("GetFamily", new { familyId = family.FamilyId }, family);
 
-            // create links
-            var links = CreateLinks(familyToReturn.FamilyId, null);
+            //var familyToReturn = _mapper.Map<FamilyReadDto>(family);
+            //// create links
+            //var links = CreateLinks(familyToReturn.FamilyId, null);
 
-            // add
-            var linkedResourceToReturn = familyToReturn.ShapeData(null) as IDictionary<string, object?>;
-            linkedResourceToReturn.Add("links", links);
+            //// add
+            //var linkedResourceToReturn = familyToReturn.ShapeData(null) as IDictionary<string, object?>;
+            //linkedResourceToReturn.Add("links", links);
 
-            return CreatedAtRoute("GetFamily", new { familyId = linkedResourceToReturn["FamilyId"] }, linkedResourceToReturn);
+            //return CreatedAtRoute("GetFamily", new { familyId = linkedResourceToReturn["FamilyId"] }, linkedResourceToReturn);
         }
 
         [HttpPut()]
@@ -101,17 +102,14 @@ namespace Ace.Api.Controllers
             _familyRepository.Update(family);
             await _unitOfWork.CommitAsync();
 
-            var familyToReturn = _mapper.Map<FamilyReadDto>(family);
-
-            // create links
-            var links = CreateLinks(familyToReturn.FamilyId, null);
-
-            // add
-            var linkedResourceToReturn = familyToReturn.ShapeData(null) as IDictionary<string, object?>;
-            linkedResourceToReturn.Add("links", links);
-
-            return CreatedAtRoute("GetFamily", new { familyId = linkedResourceToReturn["FamilyId"] }, linkedResourceToReturn);
-
+            return CreatedAtRoute("GetFamily", new { familyId = family.FamilyId }, family);
+            //var familyToReturn = _mapper.Map<FamilyReadDto>(family);
+            //// create links
+            //var links = CreateLinks(familyToReturn.FamilyId, null);
+            //// add
+            //var linkedResourceToReturn = familyToReturn.ShapeData(null) as IDictionary<string, object?>;
+            //linkedResourceToReturn.Add("links", links);
+            //return CreatedAtRoute("GetFamily", new { familyId = linkedResourceToReturn["FamilyId"] }, linkedResourceToReturn);
         }
 
         [HttpDelete("{familyId}")]
@@ -134,27 +132,27 @@ namespace Ace.Api.Controllers
 
         }
 
-        private IEnumerable<LinkDto> CreateLinks(int objectId,
-        string? fields)
-        {
-            var links = new List<LinkDto>();
+        //private IEnumerable<LinkDto> CreateLinks(int objectId,
+        //string? fields)
+        //{
+        //    var links = new List<LinkDto>();
 
-            if (string.IsNullOrWhiteSpace(fields))
-            {
-                links.Add(
-                  new(Url.Link("GetFamily", new { objectId }),
-                  "self",
-                  "GET"));
-            }
-            else
-            {
-                links.Add(
-                  new(Url.Link("GetFamily", new { objectId, fields }),
-                  "self",
-                  "GET"));
-            }
+        //    if (string.IsNullOrWhiteSpace(fields))
+        //    {
+        //        links.Add(
+        //          new(Url.Link("GetFamily", new { objectId }),
+        //          "self",
+        //          "GET"));
+        //    }
+        //    else
+        //    {
+        //        links.Add(
+        //          new(Url.Link("GetFamily", new { objectId, fields }),
+        //          "self",
+        //          "GET"));
+        //    }
 
-            return links;
-        }
+        //    return links;
+        //}
     }
 }

@@ -1,5 +1,4 @@
-﻿using Ace.Model;
-using Ace.Shared;
+﻿using Ace.Shared;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ace.Api.Database
