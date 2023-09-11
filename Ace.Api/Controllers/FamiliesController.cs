@@ -1,6 +1,7 @@
 ﻿using Ace.Api.DataBase;
 using Ace.Api.DataBase.Repositories.Interfaces;
 using Ace.Api.Models;
+using Ace.Shared.Helpers;
 using Ace.Shared.ResourceParameters;
 using Ace.Shared.Rest;
 using AutoMapper;
@@ -29,7 +30,7 @@ namespace Ace.Api.Controllers
         }
 
 
-        [HttpGet(Name = "GetAll")]
+        [HttpGet(Name = "GetFamilies")]
         public async Task<IActionResult> GetAll([FromQuery] ResourceParameters resourceParameters)
         {
             var families = await _familyRepository.GetAllAsync(resourceParameters);
@@ -38,12 +39,27 @@ namespace Ace.Api.Controllers
                 return NotFound();
             }
 
+            //CreateResourceUri
+            var previousPageLink = families.HasPrevious
+            ? ResourceUri.CreateResourceUri(Url,
+                resourceParameters,
+                ResourceUriType.PreviousPage, "GetFamilies") : null;
+
+            var nextPageLink = families.HasNext
+                ? ResourceUri.CreateResourceUri(Url,
+                    resourceParameters,
+                    ResourceUriType.NextPage, "GetFamilies") : null;
+
+
+
             var paginationMetadata = new
             {
                 totalCount = families.TotalCount,
                 pageSize = families.PageSize,
                 currentPage = families.CurrentPage,
-                totalPages = families.TotalPages
+                totalPages = families.TotalPages,
+                previousPageLink = previousPageLink,
+                nextPageLink = nextPageLink
             };
 
             Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
