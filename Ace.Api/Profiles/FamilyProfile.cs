@@ -1,4 +1,5 @@
-﻿using Ace.Api.Models;
+﻿using Ace.Api.Entities;
+using Ace.Api.Models;
 using AutoMapper;
 
 namespace Ace.Api.Profiles

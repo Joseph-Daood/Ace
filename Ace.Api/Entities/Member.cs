@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Ace.Shared;
 
-namespace Ace.Api
+namespace Ace.Api.Entities
 {
     public class Member: ObjectBase
     {

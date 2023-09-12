@@ -1,4 +1,5 @@
 ﻿
+using Ace.Api.Entities;
 using Ace.Shared.Repositories;
 using ACE.Shared.Repositories;
 using System.Threading.Tasks;

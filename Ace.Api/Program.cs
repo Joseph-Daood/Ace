@@ -2,6 +2,7 @@ using Ace.Api.Database;
 using Ace.Api.DataBase;
 using Ace.Api.DataBase.Repositories;
 using Ace.Api.DataBase.Repositories.Interfaces;
+using Ace.Api.Services;
 using Ace.Shared.Config;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +27,7 @@ builder.Services
             options.EnableSensitiveDataLogging(true);
 #endif
         })
+        .AddTransient<IPropertyMappingService, PropertyMappingService>()
         .AddScoped<IMemberRepository, MemberRepository>()
         .AddScoped<IFamilyRepository, FamilyRepository>()
         .AddScoped<INotificationRepository, NotificationRepository>()

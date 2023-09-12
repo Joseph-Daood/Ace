@@ -1,6 +1,8 @@
 ﻿using Ace.Api.DataBase;
 using Ace.Api.DataBase.Repositories.Interfaces;
+using Ace.Api.Entities;
 using Ace.Api.Models;
+using Ace.Api.Services;
 using Ace.Shared.Helpers;
 using Ace.Shared.ResourceParameters;
 using Ace.Shared.Rest;
@@ -20,20 +22,25 @@ namespace Ace.Api.Controllers
         private readonly IFamilyRepository _familyRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IPropertyMappingService _propertyMappingService;
 
 
-        public FamiliesController(IFamilyRepository familyRepository, IMapper mapper, IUnitOfWork unitOfWork)
+        public FamiliesController(IFamilyRepository familyRepository, IMapper mapper, IUnitOfWork unitOfWork, IPropertyMappingService propertyMappingService = null)
         {
             _familyRepository = familyRepository;
             _unitOfWork = unitOfWork;
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _propertyMappingService = propertyMappingService;
         }
 
 
         [HttpGet(Name = "GetFamilies")]
         public async Task<IActionResult> GetAll([FromQuery] ResourceParameters resourceParameters)
         {
-            var families = await _familyRepository.GetAllAsync(resourceParameters);
+            // get property mapping dictionary
+            var familyPropertyMappingDictionary = _propertyMappingService
+                .GetPropertyMapping<FamilyReadDto, Family>();
+            var families = await _familyRepository.GetAllAsync(resourceParameters, familyPropertyMappingDictionary);
             if (families.IsNullOrEmpty())
             {
                 return NotFound();

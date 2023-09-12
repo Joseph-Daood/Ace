@@ -1,4 +1,5 @@
-﻿using Ace.Shared;
+﻿using Ace.Api.Entities;
+using Ace.Shared;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ace.Api.Database

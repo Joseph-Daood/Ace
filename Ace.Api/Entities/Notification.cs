@@ -1,7 +1,7 @@
 ﻿using Ace.Shared;
 using System.ComponentModel.DataAnnotations;
 
-namespace Ace.Api
+namespace Ace.Api.Entities
 {
     public enum NoteficationFrom
     {

@@ -1,5 +1,6 @@
 ﻿using Ace.Api.Database;
 using Ace.Api.DataBase.Repositories.Interfaces;
+using Ace.Api.Entities;
 using ACE.Shared.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Principal;

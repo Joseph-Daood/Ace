@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Ace.Shared.Helpers;
+using Ace.Shared.Mapping;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Ace.Shared.Repositories
@@ -17,7 +18,7 @@ namespace Ace.Shared.Repositories
     {
         IEnumerable<TEntity> GetAll();
         Task<List<TEntity>> GetAllAsync();
-        ValueTask<PagedList<TEntity>> GetAllAsync(ResourceParameters.ResourceParameters resourceParameters);
+        ValueTask<PagedList<TEntity>> GetAllAsync(ResourceParameters.ResourceParameters resourceParameters, Dictionary<string, PropertyMappingValue> propertyMapping);
         TEntity? GetById(params object[] Id);
         ValueTask<TEntity?> GetByIdAsync(params object[] Id);
         EntityEntry<TEntity> Insert(TEntity obj);
