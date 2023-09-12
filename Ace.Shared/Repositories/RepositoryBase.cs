@@ -1,6 +1,8 @@
 ﻿using Ace.Shared.Helpers;
+using Ace.Shared.Mapping;
 using Ace.Shared.Repositories;
 using Ace.Shared.ResourceParameters;
+using CourseLibrary.API.Helpers;
 using Isg.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -54,7 +56,7 @@ namespace ACE.Shared.Repositories
             return dbSet.AddAsync(obj);
         }
 
-        public async ValueTask<PagedList<TEntity>> GetAllAsync(ResourceParameters resourceParameters)
+        public async ValueTask<PagedList<TEntity>> GetAllAsync(ResourceParameters resourceParameters, Dictionary<string, PropertyMappingValue> propertyMapping)
         {
             var collection = dbSet as IQueryable<TEntity>;
 
@@ -62,6 +64,9 @@ namespace ACE.Shared.Repositories
             //TODO for search later
 
             //return await collection.Skip(resourceParameters.PageSize * (resourceParameters.PageNumber - 1)).Take(resourceParameters.PageSize).ToListAsync();
+            // get property mapping dictionary
+
+            collection = collection.ApplySort(resourceParameters.OrderBy, propertyMapping);
             return await PagedList<TEntity>.CreateAsync(collection,
             resourceParameters.PageNumber,
             resourceParameters.PageSize);

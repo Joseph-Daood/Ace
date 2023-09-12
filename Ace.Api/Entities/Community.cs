@@ -1,6 +1,7 @@
-﻿using Ace.Shared;
+﻿
+using Ace.Shared;
 
-namespace Ace.Api
+namespace Ace.Api.Entities
 {
     public class Community : ObjectBase
     {

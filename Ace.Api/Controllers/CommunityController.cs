@@ -1,4 +1,5 @@
 ﻿using Ace.Api.DataBase.Repositories.Interfaces;
+using Ace.Api.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ace.Api.Controllers

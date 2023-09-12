@@ -1,6 +1,6 @@
 ﻿using Ace.Shared;
 
-namespace Ace.Api
+namespace Ace.Api.Entities
 {
     public class Family: ObjectBase
     {
