@@ -22,6 +22,7 @@ namespace Ace.Api.Controllers
         private readonly IMapper _mapper;
         private readonly IPropertyMappingService _propertyMappingService;
 
+        public FamiliesController() { }
 
         public FamiliesController(IFamilyRepository familyRepository, IMapper mapper, IUnitOfWork unitOfWork, IPropertyMappingService propertyMappingService = null)
         {
@@ -54,8 +55,6 @@ namespace Ace.Api.Controllers
                 ? ResourceUri.CreateResourceUri(Url,
                     resourceParameters,
                     ResourceUriType.NextPage, "GetFamilies") : null;
-
-
 
             var paginationMetadata = new
             {
