@@ -20,8 +20,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABE9EE30-9F63-4460-85E6-C1CA5247AA4C}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		gitignore = gitignore
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED92654C-C6D4-47D6-8A3F-4E6D39420AB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ace.Api.IntegrationTests", "Tests\Ace.Api.IntegrationTests\Ace.Api.IntegrationTests.csproj", "{4AF36B5A-2839-4112-9BC2-5990898EA3AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +48,10 @@ Global
 		{ABBCA30C-345E-4C77-8A73-B3494AB78F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABBCA30C-345E-4C77-8A73-B3494AB78F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABBCA30C-345E-4C77-8A73-B3494AB78F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AF36B5A-2839-4112-9BC2-5990898EA3AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AF36B5A-2839-4112-9BC2-5990898EA3AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AF36B5A-2839-4112-9BC2-5990898EA3AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AF36B5A-2839-4112-9BC2-5990898EA3AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +61,7 @@ Global
 		{297C41BD-463F-433C-9CA0-0DEFB7E90A61} = {2674368F-3D3C-4A36-9CE8-D646BBCE4DA0}
 		{FBF0D2FF-328B-4828-93FB-34F3A8CA9CFC} = {BA48260A-877C-4201-82EF-81CAB288D053}
 		{ABBCA30C-345E-4C77-8A73-B3494AB78F2C} = {2674368F-3D3C-4A36-9CE8-D646BBCE4DA0}
+		{4AF36B5A-2839-4112-9BC2-5990898EA3AF} = {ED92654C-C6D4-47D6-8A3F-4E6D39420AB6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {618B1CB1-ED21-465E-BA68-362DAEB87905}
